@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>文章 · 王子猪博客</title>
+    <meta name="description" content="王子猪博客，记录季节、书、厨房与普通日子。" />
+    <meta name="theme-color" content="#f3ebdd" />
+    <meta property="og:type" content="article" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23a8573c'/%3E%3Cpath d='M32 49V26c0-7 5-11 11-11-1 8-5 12-11 12M32 38c-6 0-10-4-10-11 6 1 10 4 10 11' fill='none' stroke='%23fbf5ea' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script>
+      (function () {
+        try {
+          var forced = new URLSearchParams(location.search).get("theme");
+          var saved = forced || localStorage.getItem("linshen-theme");
+          if (!saved) {
+            saved = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          document.documentElement.setAttribute("data-theme", saved === "dark" ? "dark" : "light");
+        } catch (e) {}
+      })();
+    </script>
+    <script src="assets/js/design-presets.js"></script>
+    <script src="assets/js/design.js"></script>
+    <script src="assets/js/design-loader.js"></script>
+  </head>
+  <body data-page="post">
+    <a class="skip-link" href="#main">跳到正文</a>
+    <div class="progress" data-progress aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="index.html" aria-label="王子猪博客 · 返回首页">
+          <span class="brand__seal" aria-hidden="true">王</span>
+          <span class="brand__text">
+            <span class="brand__name" data-site-title data-design-text="siteTitle">王子猪博客</span>
+            <span class="brand__tag" data-site-tagline data-design-text="tagline">慢慢写，好好生活</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="主导航">
+          <a class="site-nav__link" href="index.html" data-design-text="navHome">手记</a>
+          <a class="site-nav__link" href="index.html#about" data-design-text="navAbout">关于</a>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换到深色模式" aria-pressed="false">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.2" />
+              <path d="M12 2.6v2.1M12 19.3v2.1M2.6 12h2.1M19.3 12h2.1M5.4 5.4l1.5 1.5M17.1 17.1l1.5 1.5M18.6 5.4l-1.5 1.5M6.9 17.1l-1.5 1.5" />
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20.4 14.3A8.6 8.6 0 1 1 9.7 3.6a6.9 6.9 0 0 0 10.7 10.7Z" />
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="wrap wrap--read" data-post-root hidden>
+        <div class="post-head">
+          <a class="back-link" href="index.html">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 12H6M12 6l-6 6 6 6" />
+            </svg>
+            返回全部手记
+          </a>
+
+          <div class="post-head__tags" data-post-tags></div>
+
+          <h1 class="post-title" data-post-title>文章</h1>
+          <p class="post-lede" data-post-excerpt></p>
+
+          <div class="post-head__meta">
+            <div class="meta" data-post-meta></div>
+            <div class="tools">
+              <div class="fontctl" role="group" aria-label="调整正文字号">
+                <button type="button" data-font="s" aria-pressed="false" title="小字号">小</button>
+                <button type="button" data-font="m" aria-pressed="true" title="中字号">中</button>
+                <button type="button" data-font="l" aria-pressed="false" title="大字号">大</button>
+              </div>
+              <button class="icon-btn" type="button" data-copy>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="9" y="9" width="11" height="11" rx="2.5" />
+                  <path d="M15 5.5A2.5 2.5 0 0 0 12.5 3h-6A3.5 3.5 0 0 0 3 6.5v6A2.5 2.5 0 0 0 5.5 15" />
+                </svg>
+                <span data-copy-label>复制链接</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <figure class="post-cover" data-post-cover hidden></figure>
+
+        <article class="article" data-post-content data-size="m"></article>
+
+        <p class="post-end"><span>· 完 ·</span></p>
+
+        <nav class="post-nav" aria-label="相邻文章" data-post-nav></nav>
+      </div>
+
+      <div class="wrap wrap--read notice" data-post-missing hidden>
+        <h1 class="notice__title" data-missing-title>这一页还没有写</h1>
+        <p data-missing-text>文章可能被移动或改名了。回到手记首页，从最新的一篇开始读吧。</p>
+        <a class="btn" href="index.html">返回全部手记</a>
+        <div class="notice__list" data-missing-list></div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <p>© <span data-year>2026</span> <span data-site-title>王子猪博客</span> · 所有文字保留权利</p>
+        <p data-design-text="footerNote">用纯 HTML / CSS / JS 写成 · 慢慢写，好好生活</p>
+        <a class="to-top" href="#" data-to-top>
+          回到顶部
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 19V5M6 11l6-6 6 6" />
+          </svg>
+        </a>
+      </div>
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/post.js"></script>
+  </body>
+</html>

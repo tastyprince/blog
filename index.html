@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>王子猪博客 · 慢慢写，好好生活</title>
+    <meta
+      name="description"
+      content="王子猪博客：记录季节、书、厨房与普通日子。慢慢写，好好生活。"
+    />
+    <meta name="theme-color" content="#f3ebdd" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="王子猪博客" />
+    <meta property="og:description" content="记录季节、书、厨房，和一些普通日子。" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23a8573c'/%3E%3Cpath d='M32 49V26c0-7 5-11 11-11-1 8-5 12-11 12M32 38c-6 0-10-4-10-11 6 1 10 4 10 11' fill='none' stroke='%23fbf5ea' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script>
+      (function () {
+        try {
+          var forced = new URLSearchParams(location.search).get("theme");
+          var saved = forced || localStorage.getItem("linshen-theme");
+          if (!saved) {
+            saved = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          document.documentElement.setAttribute("data-theme", saved === "dark" ? "dark" : "light");
+        } catch (e) {}
+      })();
+    </script>
+    <script src="assets/js/design-presets.js"></script>
+    <script src="assets/js/design.js"></script>
+    <script src="assets/js/design-loader.js"></script>
+  </head>
+  <body data-page="home">
+    <a class="skip-link" href="#main">跳到正文</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="index.html" aria-label="王子猪博客 · 返回首页">
+          <span class="brand__seal" aria-hidden="true">王</span>
+          <span class="brand__text">
+            <span class="brand__name" data-site-title data-design-text="siteTitle">王子猪博客</span>
+            <span class="brand__tag" data-site-tagline data-design-text="tagline">慢慢写，好好生活</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="主导航">
+          <a class="site-nav__link" href="index.html" aria-current="page" data-design-text="navHome">手记</a>
+          <a class="site-nav__link" href="#about" data-design-text="navAbout">关于</a>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换到深色模式" aria-pressed="false">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.2" />
+              <path d="M12 2.6v2.1M12 19.3v2.1M2.6 12h2.1M19.3 12h2.1M5.4 5.4l1.5 1.5M17.1 17.1l1.5 1.5M18.6 5.4l-1.5 1.5M6.9 17.1l-1.5 1.5" />
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20.4 14.3A8.6 8.6 0 1 1 9.7 3.6a6.9 6.9 0 0 0 10.7 10.7Z" />
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="wrap">
+          <h1 class="hero__title" data-design-text="heroTitle">把日常，写成<em>可以回望</em>的字句。</h1>
+          <p class="hero__lede" data-site-intro data-design-text="heroIntro">记录季节、书、厨房，和一些普通日子。</p>
+        </div>
+      </section>
+
+      <!-- 筛选 -->
+      <section class="wrap" aria-label="搜索与筛选">
+        <div class="toolbar">
+          <div class="search" data-search-wrap>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="6.5" />
+              <path d="M16 16l4.5 4.5" />
+            </svg>
+            <label for="search-input" class="sr-only">搜索文章</label>
+            <input id="search-input" type="search" placeholder="搜索标题、摘要或正文…" autocomplete="off" spellcheck="false" />
+            <button class="search__clear" type="button" data-search-clear aria-label="清空搜索">×</button>
+          </div>
+          <div class="filters" data-filters role="group" aria-label="按标签筛选"></div>
+          <p class="result-note" data-result-note aria-live="polite"></p>
+        </div>
+      </section>
+
+      <!-- 精选 -->
+      <section class="wrap" aria-label="精选文章" data-featured-section hidden>
+        <div class="section-label"><span>置顶 · 精选</span></div>
+        <div data-featured></div>
+      </section>
+
+      <!-- 全部文章 -->
+      <section class="wrap" id="posts" aria-label="全部文章">
+        <div data-post-list></div>
+        <div class="empty" data-empty hidden>
+          <span class="empty__title">没有找到相符的文字</span>
+          <p>换个关键词，或者先看看全部手记。</p>
+          <button type="button" data-reset>查看全部手记</button>
+        </div>
+      </section>
+
+      <!-- 关于 -->
+      <section class="wrap" id="about" aria-label="关于我">
+        <div class="about">
+          <div class="about__grid">
+            <div class="avatar" aria-hidden="true" data-avatar>薛</div>
+            <div class="about__body">
+              <p class="about__eyebrow">ABOUT THE WRITER</p>
+              <h2 class="about__name" data-site-name>薛长</h2>
+              <p class="about__text" data-site-about data-design-text="aboutIntro">
+                我住在一座总是下雨的南方城市，白天写代码，晚上写一点没什么用处的字。这里收着一些关于季节、书、厨房和普通日子的记录——它们不够重要，但足够真实。
+              </p>
+            </div>
+            <div class="about__side">
+              <p class="about__side-label">找到我</p>
+              <div class="about__links" data-socials>
+                <a class="about__link" href="mailto:hello@linshen.example">邮件</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <p>© <span data-year>2026</span> <span data-site-title>王子猪博客</span> · 所有文字保留权利</p>
+        <p data-design-text="footerNote">用纯 HTML / CSS / JS 写成 · 慢慢写，好好生活</p>
+        <a class="to-top" href="#" data-to-top>
+          回到顶部
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 19V5M6 11l6-6 6 6" />
+          </svg>
+        </a>
+      </div>
+    </footer>
+
+    <noscript>
+      <p style="text-align: center; padding: 2rem">
+        这个博客需要 JavaScript 才能显示文章列表，请在浏览器设置中启用它。
+      </p>
+    </noscript>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
